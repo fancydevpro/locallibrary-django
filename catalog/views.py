@@ -38,3 +38,6 @@ class BookListView(generic.ListView):
     context = super(BookListView, self).get_context_data(**kwargs)
     # context['some_data'] = 'T'
     return context'''
+
+class BookDetailView(generic.DetailView):
+  model = Book
