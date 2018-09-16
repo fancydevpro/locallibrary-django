@@ -30,3 +30,10 @@ from django.views.generic import RedirectView
 urlpatterns += [
     path('', RedirectView.as_view(url='/catalog/')),
 ]
+
+# authentication urls (login, logout, password management)
+from django.urls import include
+
+urlpatterns += [
+  path('accounts/', include('django.contrib.auth.urls')),
+]
