@@ -13,6 +13,8 @@
    <li><strong>Books includes word 'book':</strong> {{ num_books_includes_book }} </li>
    <li><strong>Genres of romance:</strong> {{ num_genres_romance }} </li>
  </ul>
+
+ <p>You have visited this page{% if num_visits >= 1 %} {{ num_visits }} times{% endif %}.</p>
 {% endblock %}
 
 {% block title %}
