@@ -25,3 +25,27 @@ def index(request):
   }
 
   return render(request, 'index.html', context=context)
+
+from django.views import generic
+
+class BookListView(generic.ListView):
+  model = Book
+  paginate_by = 3
+
+  '''def get_queryset(self):
+    return Book.objects.filter(title__icontains='book')[:5]
+  
+  def get_context_data(self, **kwargs):
+    context = super(BookListView, self).get_context_data(**kwargs)
+    # context['some_data'] = 'T'
+    return context'''
+
+class BookDetailView(generic.DetailView):
+  model = Book
+
+class AuthorListView(generic.ListView):
+  model = Author
+  paginate_by = 2
+
+class AuthorDetailView(generic.DetailView):
+  model = Author
