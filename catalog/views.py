@@ -30,6 +30,7 @@ from django.views import generic
 
 class BookListView(generic.ListView):
   model = Book
+  paginate_by = 3
 
   '''def get_queryset(self):
     return Book.objects.filter(title__icontains='book')[:5]
